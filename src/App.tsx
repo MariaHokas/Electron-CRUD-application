@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createRenderer } from "fela";
+import { RendererProvider } from "react-fela";
+import { BrowserRouter } from "react-router-dom";
+import { Card } from "./Components/Card/Card";
+import "antd/dist/antd.css";
+import Pages from "./Pages";
+import { QueryClient, QueryClientProvider } from "react-query";
+import NavBar from "./NavBar/NavBar";
 
-function App() {
+interface ITemplateProps {
+  headerContent?: string;
+}
+
+const queryClient = new QueryClient();
+
+const renderer = createRenderer();
+
+const App: React.FC<ITemplateProps> = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RendererProvider renderer={renderer}>
+        <QueryClientProvider client={queryClient}>
+          <Card>
+            <BrowserRouter>
+              <NavBar />
+              <Pages />
+            </BrowserRouter>
+          </Card>
+        </QueryClientProvider>
+      </RendererProvider>
     </div>
   );
-}
+};
 
 export default App;
