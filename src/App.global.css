@@ -44,19 +44,27 @@ a {
   margin: 10px;
 }
 
+.table-body {
+  margin-top: 10px;
+  background-color: #152238;
+  padding-top: 20px;
+}
+
 table {
   margin: auto;
   margin-top: 50px;
   border: 1px solid #fbeec1;
   box-shadow: 1px 2px white;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: white;
 }
 
 td,
 th {
-  text-align: left;
+  text-align: center;
   border: 0.1px solid #fbeec1;
-  padding: 5px;
+  padding: 10px;
+  margin: auto;
 }
 
 img {
@@ -70,13 +78,28 @@ form {
   justify-content: space-around;
 }
 
+.input-field-box {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+}
+
 input {
   margin: auto;
-  margin-top: 10px;
+  margin-bottom: 20;
   padding: 5px;
   border-radius: 5px;
   outline-width: 0;
   -webkit-app-region: no-drag;
+}
+
+label {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
 }
 
 input[type="submit"] {

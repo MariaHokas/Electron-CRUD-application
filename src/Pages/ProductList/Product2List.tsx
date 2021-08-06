@@ -1,15 +1,13 @@
 import { useMutation, useQuery, useQueryClient } from "react-query";
-import { useStyles } from "../style";
-import { fetchProductsNoView, deleteProduct } from "../Service/service";
-import ProductAdd from "./ProductAdd";
+import { fetchProductsNoView, deleteProduct } from "../../Service/service";
+import { ProductAdd } from "../ProductAdd";
 import { useState } from "react";
-import { EditProductProps, IProduct } from "../Interfaces/interface";
-import ProductEdit from "./ProductEdit";
+import { EditProductProps, IProduct } from "../../Interfaces/interface";
+import { ProductEdit } from "../EditProduct";
 
 const productsFromDB: EditProductProps[] = [];
 
-const Product2List: React.FC = () => {
-  const styles = useStyles();
+export const Product2List: React.FC = () => {
   const queryClient = useQueryClient();
   const [show, setShow] = useState(true);
   const [deleteSuccess, setDeleteSuccess] = useState("");
@@ -68,16 +66,14 @@ const Product2List: React.FC = () => {
         <button type="button" onClick={activateAddNewWindow}>
           Add new
         </button>
-        {mutation.isSuccess ? (
-          <div className={styles.h3}>{deleteSuccess} </div>
-        ) : null}
+        {mutation.isSuccess ? <div>{deleteSuccess} </div> : null}
         {!show ? (
           <ProductAdd show={show} setShow={setShow} />
         ) : (
-          <div className={styles.body}>
-            <table className={styles.table}>
-              <thead className={styles.th}>
-                <tr className={styles.th}>
+          <div className={"table-body"}>
+            <table>
+              <thead>
+                <tr>
                   <th />
                   <th>Product Id</th>
                   <th>Name</th>
@@ -86,9 +82,9 @@ const Product2List: React.FC = () => {
                   <th>Cost</th>
                 </tr>
               </thead>
-              <tbody className={styles.App_planet}>
+              <tbody>
                 {data.map((product: IProduct) => (
-                  <tr className={styles.td} key={product.productId}>
+                  <tr key={product.productId}>
                     <td>
                       {""}
                       <button
@@ -132,5 +128,3 @@ const Product2List: React.FC = () => {
     );
   }
 };
-
-export default Product2List;

@@ -1,11 +1,11 @@
 import { useFormik } from "formik";
 import { useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "react-query";
-import InputForm from "../Components/Inputform/inputForm";
-import { EditProductProps } from "../Interfaces/interface";
-import { updateProduct } from "../Service/service";
+import { useMutation, useQueryClient } from "react-query";
+import { InputForm } from "../../Components/InputForm";
+import { EditProductProps } from "../../Interfaces/interface";
+import { updateProduct } from "../../Service/service";
 
-const ProductEdit: React.FC<EditProductProps> = ({
+export const ProductEdit: React.FC<EditProductProps> = ({
   productOneQuery,
   setVisible,
 }) => {
@@ -40,5 +40,3 @@ const ProductEdit: React.FC<EditProductProps> = ({
     </>
   );
 };
-
-export default ProductEdit;

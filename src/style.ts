@@ -7,9 +7,12 @@ export const useStyles = () => {
     body: css({
       margin: 0,
       fontFamily: "sans-serif",
-      background: "#222",
+      background: "#152238",
       color: "#ddd",
       textAlign: "left",
+      padding: "10px",
+      boxSizing: "border-box",
+      marginTop: "20px",
     }),
     h3: css({
       color: "#8d8741",
@@ -37,8 +40,6 @@ export const useStyles = () => {
     App_planet: css({
       width: "960px",
       margin: "auto",
-      textAlign: "left",
-      border: "0.1px solid #fbeec1",
     }),
     card: css({
       padding: "8px 16px",

@@ -5,7 +5,7 @@ import { Card } from "./Components/Card/Card";
 import "antd/dist/antd.css";
 import Pages from "./Pages";
 import { QueryClient, QueryClientProvider } from "react-query";
-import NavBar from "./NavBar/NavBar";
+import { NavBar } from "./NavBar";
 
 interface ITemplateProps {
   headerContent?: string;

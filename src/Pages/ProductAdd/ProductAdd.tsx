@@ -1,11 +1,11 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useMutation, useQueryClient } from "react-query";
-import { createProduct } from "../Service/service";
-import { initialValues, NewProductProps } from "../Interfaces/interface";
-import InputForm from "../Components/Inputform/inputForm";
+import { createProduct } from "../../Service/service";
+import { initialValues, NewProductProps } from "../../Interfaces/interface";
+import InputForm from "../../Components/InputForm/inputForm";
 
-const ProductAdd: React.FC<NewProductProps> = ({ setShow, show }) => {
+export const ProductAdd: React.FC<NewProductProps> = ({ setShow, show }) => {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading, error } = useMutation(createProduct, {
@@ -40,5 +40,3 @@ const ProductAdd: React.FC<NewProductProps> = ({ setShow, show }) => {
     </>
   );
 };
-
-export default ProductAdd;
