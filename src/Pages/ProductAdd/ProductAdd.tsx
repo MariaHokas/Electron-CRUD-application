@@ -5,7 +5,11 @@ import { createProduct } from "../../Service/service";
 import { initialValues, NewProductProps } from "../../Interfaces/interface";
 import InputForm from "../../Components/InputForm/inputForm";
 
-export const ProductAdd: React.FC<NewProductProps> = ({ setShow, show }) => {
+export const ProductAdd: React.FC<NewProductProps> = ({
+  setShow,
+  show,
+  setButtonText,
+}) => {
   const queryClient = useQueryClient();
 
   const { mutate, isLoading, error } = useMutation(createProduct, {
@@ -29,8 +33,14 @@ export const ProductAdd: React.FC<NewProductProps> = ({ setShow, show }) => {
       };
       console.log("olen tämä value", values);
       mutate(product);
-      if (show) setShow(false);
-      if (!show) setShow(true);
+      if (show) {
+        setShow(false);
+        setButtonText("Add New");
+      }
+      if (!show) {
+        setShow(true);
+        setButtonText("Add New");
+      }
     },
   });
   return (

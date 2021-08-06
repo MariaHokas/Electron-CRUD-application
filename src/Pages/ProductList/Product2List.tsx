@@ -10,6 +10,7 @@ const productsFromDB: EditProductProps[] = [];
 export const Product2List: React.FC = () => {
   const queryClient = useQueryClient();
   const [show, setShow] = useState(true);
+  const [buttonText, setButtonText] = useState("Add New");
   const [deleteSuccess, setDeleteSuccess] = useState("");
   const [productOneQuery, setProductOneQuery] = useState(productsFromDB);
   const [id, setId] = useState(0);
@@ -33,8 +34,14 @@ export const Product2List: React.FC = () => {
   });
 
   const activateAddNewWindow = () => {
-    if (show) setShow(false);
-    if (!show) setShow(true);
+    if (show) {
+      setShow(false);
+      setButtonText("Close");
+    }
+    if (!show) {
+      setShow(true);
+      setButtonText("Add New");
+    }
   };
 
   const handleDelete = (productId: number): void => {
@@ -64,11 +71,15 @@ export const Product2List: React.FC = () => {
     return (
       <>
         <button type="button" onClick={activateAddNewWindow}>
-          Add new
+          {buttonText}
         </button>
         {mutation.isSuccess ? <div>{deleteSuccess} </div> : null}
         {!show ? (
-          <ProductAdd show={show} setShow={setShow} />
+          <ProductAdd
+            show={show}
+            setShow={setShow}
+            setButtonText={setButtonText}
+          />
         ) : (
           <div className={"table-body"}>
             <table>

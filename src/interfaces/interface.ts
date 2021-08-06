@@ -13,6 +13,7 @@ export const initialValues: InitialValuesProduct = {
 };
 
 export interface NewProductProps extends InitialValuesProduct {
+  setButtonText: (setButtonText: string) => void;
   setShow: (setShow: boolean) => void;
   show: boolean;
   productsFromDB?: any;

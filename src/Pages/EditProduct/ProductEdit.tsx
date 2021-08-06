@@ -36,6 +36,7 @@ export const ProductEdit: React.FC<EditProductProps> = ({
   return (
     <>
       {isLoading ? <p>Is loading ..</p> : null}
+      <button onClick={() => setVisible("list")}>Close</button>
       <InputForm formik={formik} />
     </>
   );
