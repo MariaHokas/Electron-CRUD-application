@@ -62,7 +62,11 @@ export const Product2List: React.FC = () => {
   if (visible === "list") {
     return (
       <>
-        <button type="button" onClick={activateAddNewWindow}>
+        <button
+          className="button-basic"
+          type="button"
+          onClick={activateAddNewWindow}
+        >
           Add New
         </button>
         {mutation.isSuccess ? <div>{deleteSuccess} </div> : null}

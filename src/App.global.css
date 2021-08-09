@@ -9,7 +9,7 @@ body {
   -webkit-app-region: drag;
 }
 
-button {
+.button-basic {
   background-color: #d4af37;
   color: white;
   padding: 10px 20px;
@@ -27,7 +27,7 @@ button {
   -webkit-app-region: no-drag;
 }
 
-button:hover {
+.button-basic:hover {
   transform: scale(1.05);
   background-color: white;
   color: #659dbd;
@@ -37,8 +37,8 @@ li {
   list-style: none;
 }
 
-nav a {
-  color: red;
+nav a:hover {
+  color: red !important;
   text-decoration: none;
   height: fit-content;
   width: fit-content;
@@ -84,13 +84,15 @@ th {
 
 .product-item-delete-button {
   background-color: transparent;
-  border: none !important;
+  border: none;
   box-shadow: none;
 }
 
-.product-item-delete-button:hover button {
-  background-color: transparent !important;
-  border: none !important;
+.product-item-delete-button:hover {
+  background-color: white;
+  opacity: 50%;
+  color: white !important;
+  border: none;
   box-shadow: none;
 }
 
@@ -137,7 +139,7 @@ form {
 
 input {
   margin: auto;
-  margin-bottom: 20;
+  margin-bottom: 20px;
   padding: 5px;
   border-radius: 5px;
   outline-width: 0;
@@ -151,24 +153,26 @@ label {
   font-weight: bold;
 }
 
-input[type="submit"] {
-  background-color: #8d8741;
+button[type="submit"] {
+  background-color: #d4af37;
+  margin-top: 20px;
+  max-width: 200px;
+  height: 35px;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
   border: none;
-  appearance: none;
   font-size: 0.9rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+  box-shadow: 0px 8px 28px -6px rgba(233, 236, 243, 0.12),
+    0px 18px 88px -4px rgba(214, 217, 224, 0.14);
   transition: transform ease-in 0.1s;
   cursor: pointer;
   outline-width: 0;
   -webkit-app-region: no-drag;
 }
 
-input[type="submit"]:hover {
-  transform: scale(1.2);
+button[type="submit"]:hover {
+  transform: scale(1.1);
   background-color: white;
   color: #659dbd;
   -webkit-app-region: no-drag;

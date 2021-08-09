@@ -24,7 +24,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
           <p className="delete-button-text">X</p>
         </button>
         <button
-          className="product-item-edit-button"
+          className="button-basic product-item-edit-button"
           value={product.productId}
           onClick={() => handleEdit(product as IProduct[])}
           type="button"

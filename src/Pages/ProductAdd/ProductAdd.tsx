@@ -35,6 +35,12 @@ export const ProductAdd: React.FC = () => {
   return (
     <>
       {isLoading ? <p>Is loading ..</p> : null}
+      <button
+        className="button-basic"
+        onClick={() => history.push("/Product2List")}
+      >
+        Close
+      </button>
       <InputForm formik={formik} />
     </>
   );
