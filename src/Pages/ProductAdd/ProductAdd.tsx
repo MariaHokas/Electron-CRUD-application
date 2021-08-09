@@ -1,27 +1,25 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useMutation, useQueryClient } from "react-query";
+import { useHistory } from "react-router-dom";
 import { createProduct } from "../../Service/service";
-import { initialValues, NewProductProps } from "../../Interfaces/interface";
+import { initialValues } from "../../Interfaces/interface";
 import InputForm from "../../Components/InputForm/inputForm";
 
-export const ProductAdd: React.FC<NewProductProps> = ({
-  setShow,
-  show,
-  setButtonText,
-}) => {
+export const ProductAdd: React.FC = () => {
   const queryClient = useQueryClient();
-
+  const history = useHistory();
   const { mutate, isLoading, error } = useMutation(createProduct, {
     onSuccess: () => {
       queryClient.refetchQueries(["products"], { active: true });
+      history.push("/Product2List");
     },
     onError: () => {
       alert("there was an error");
       console.log(error);
     },
     onSettled: () => {
-      queryClient.invalidateQueries("create");
+      queryClient.invalidateQueries("products");
     },
   });
 
@@ -31,16 +29,7 @@ export const ProductAdd: React.FC<NewProductProps> = ({
       const product = {
         ...values,
       };
-      console.log("olen tämä value", values);
       mutate(product);
-      if (show) {
-        setShow(false);
-        setButtonText("Add New");
-      }
-      if (!show) {
-        setShow(true);
-        setButtonText("Add New");
-      }
     },
   });
   return (

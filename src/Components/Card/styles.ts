@@ -5,20 +5,13 @@ export const useStyles = () => {
   const { css } = useFela<ITheme>();
   return {
     card: css({
+      backgroundColor: "#152238",
       margin: "0",
       borderRadius: 8,
       borderStyle: "solid",
       borderWidth: "thick",
       borderColor: "#d4af37",
-      //borderColor: theme.colors.MINT_5CA5B8,
-      nested: {
-        "& .ant-card-head-wrapper": {
-          alignItems: "flex-start",
-        },
-        "& .ant-card-body": {
-          padding: 0,
-        },
-      },
+      paddingBottom: "100px",
     }),
   };
 };

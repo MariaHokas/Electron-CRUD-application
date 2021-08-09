@@ -1,10 +1,3 @@
-export interface InitialValuesProduct {
-  name?: string;
-  productNumber?: string;
-  listPrice?: number;
-  standardCost?: number;
-}
-
 export const initialValues: InitialValuesProduct = {
   name: "",
   productNumber: "",
@@ -12,11 +5,17 @@ export const initialValues: InitialValuesProduct = {
   standardCost: 0,
 };
 
+export interface InitialValuesProduct {
+  name?: string;
+  productNumber?: string;
+  listPrice?: number;
+  standardCost?: number;
+}
+
 export interface NewProductProps extends InitialValuesProduct {
   setButtonText: (setButtonText: string) => void;
   setShow: (setShow: boolean) => void;
   show: boolean;
-  productsFromDB?: any;
 }
 
 export interface EditProductProps extends IProductObject {
@@ -28,11 +27,11 @@ export interface EditProductProps extends IProductObject {
 }
 
 export interface IProduct {
-  productId: number;
+  productId?: number;
   name?: string;
   productNumber?: string;
   listPrice?: number;
-  standardCost: number;
+  standardCost?: number;
 }
 
 export interface IProductObject {

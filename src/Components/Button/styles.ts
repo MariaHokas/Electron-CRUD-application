@@ -7,7 +7,7 @@ export const useStyles = () => {
     button: css({
       color: "goldenrod",
       margin: "10px",
-      borderStyle: "solid",
+      borderStyle: "none",
       borderWidth: "2px",
       borderColor: "goldenrod",
       textTransform: "uppercase",

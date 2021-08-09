@@ -14,6 +14,7 @@ export const ProductEdit: React.FC<EditProductProps> = ({
   const { mutate, isLoading, error } = useMutation(updateProduct, {
     onSuccess: () => {
       queryClient.refetchQueries(["products"], { active: true });
+      setVisible("list");
     },
     onError: () => {
       alert("there was an error");
@@ -29,7 +30,6 @@ export const ProductEdit: React.FC<EditProductProps> = ({
     onSubmit: (values) => {
       setInitialValues({ ...values });
       mutate(values);
-      setVisible("list");
     },
   });
 

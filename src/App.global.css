@@ -37,7 +37,8 @@ li {
   list-style: none;
 }
 
-a {
+nav a {
+  color: red;
   text-decoration: none;
   height: fit-content;
   width: fit-content;
@@ -65,6 +66,54 @@ th {
   border: 0.1px solid #fbeec1;
   padding: 10px;
   margin: auto;
+}
+
+.product-item-container {
+  border: 1px solid #fbeec1;
+  flex-direction: row;
+  display: flex;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.product-item {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.product-item-delete-button {
+  background-color: transparent;
+  border: none !important;
+  box-shadow: none;
+}
+
+.product-item-delete-button:hover button {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+.delete-button-text {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.product-item-edit-button {
+  background-color: white;
+  color: #152238;
+  width: 90%;
+  text-align: left;
+  margin: auto;
+}
+
+.product-item-edit-button h2 {
+  color: #152238;
+}
+
+.product-item-edit-button p {
+  color: #152238;
 }
 
 img {
@@ -157,14 +206,20 @@ hr {
   margin: 7px;
 }
 
+nav {
+  text-align: right;
+}
+
 .nav-button-row {
-  float: right;
+  display: "flex";
+  flex-direction: column;
+  justify-content: right;
 }
 
 .nav-button {
   background-color: transparent;
   padding: 2px;
-  margin-left: 10px;
+  margin-right: 10px;
   font-size: 12px;
 }
 
@@ -179,6 +234,7 @@ hr {
 }
 
 a:hover {
+  color: red;
   opacity: 1;
   text-decoration: none;
 }
