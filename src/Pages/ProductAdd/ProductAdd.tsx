@@ -3,8 +3,8 @@ import { useFormik } from "formik";
 import { useMutation, useQueryClient } from "react-query";
 import { useHistory } from "react-router-dom";
 import { createProduct } from "../../Service/service";
-import { initialValues } from "../../Interfaces/interface";
-import InputForm from "../../Components/InputForm/inputForm";
+import { initialValues } from "../../Interfaces/";
+import { InputForm } from "../../Components/InputForm";
 
 export const ProductAdd: React.FC = () => {
   const queryClient = useQueryClient();

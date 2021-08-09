@@ -150,7 +150,8 @@ label {
   text-align: left;
   padding: 0;
   margin: 0;
-  font-weight: bold;
+  font-weight: bolder;
+  color: white;
 }
 
 button[type="submit"] {

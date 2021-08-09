@@ -2,7 +2,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { InputForm } from "../../Components/InputForm";
-import { EditProductProps } from "../../Interfaces/interface";
+import { EditProductProps } from "../../Interfaces";
 import { updateProduct } from "../../Service/service";
 
 export const ProductEdit: React.FC<EditProductProps> = ({

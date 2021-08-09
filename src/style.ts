@@ -1,8 +1,7 @@
 import { useFela } from "react-fela";
-import { ITheme } from "./themes";
 
 export const useStyles = () => {
-  const { css } = useFela<ITheme>();
+  const { css } = useFela();
   return {
     body: css({
       margin: 0,
